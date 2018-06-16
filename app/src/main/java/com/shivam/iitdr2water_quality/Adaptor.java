@@ -49,10 +49,13 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
         holder.clvalue.setText(String.valueOf(pool.getChlorine()));
         holder.thresholdcl.setText(String.valueOf(pool.getChlorinethreshold_max()+"-"+pool.getChlorinethreshold_min()));
 
-        if(pool.getPh()<pool.getPhthreshold_min()||pool.getPh()>pool.getPhthreshold_max()||pool.getChlorine()<pool.getChlorinethreshold_min()||pool.getChlorine()>pool.getChlorinethreshold_max()){
+        if(pool.getPh()<pool.getPhthreshold_min()||pool.getPh()>pool.getPhthreshold_max()){
+            holder.phvalue.setTextColor(Color.RED);
             holder.frameswimmingpool.setBackgroundColor(Color.RED);
-        }else{
-            holder.frameswimmingpool.setBackgroundColor(Color.GREEN);
+        }
+        if(pool.getChlorine()<pool.getChlorinethreshold_min()||pool.getChlorine()>pool.getChlorinethreshold_max()){
+            holder.clvalue.setTextColor(Color.RED);
+            holder.frameswimmingpool.setBackgroundColor(Color.RED);
         }
 
     }

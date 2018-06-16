@@ -4,14 +4,14 @@ public class swimmingpools {
 
     String Name;
     String address;
-    int Ph;
-    int Chlorine;
-    int phthreshold_max;
-    int phthreshold_min;
-    int Chlorinethreshold_max;
-    int Chlorinethreshold_min;
+    double Ph;
+    double Chlorine;
+    double phthreshold_max;
+    double phthreshold_min;
+    double Chlorinethreshold_max;
+    double Chlorinethreshold_min;
 
-    public swimmingpools(String name, String address, int ph, int chlorine, int phthreshold_max, int phthreshold_min, int chlorinethreshold_max, int chlorinethreshold_min) {
+    public swimmingpools(String name, String address, double ph, double chlorine, double phthreshold_max, double phthreshold_min, double chlorinethreshold_max, double chlorinethreshold_min) {
         Name = name;
         this.address = address;
         Ph = ph;
@@ -31,27 +31,27 @@ public class swimmingpools {
         return address;
     }
 
-    public int getPh() {
+    public double getPh() {
         return Ph;
     }
 
-    public int getChlorine() {
+    public double getChlorine() {
         return Chlorine;
     }
 
-    public int getPhthreshold_max() {
+    public double getPhthreshold_max() {
         return phthreshold_max;
     }
 
-    public int getPhthreshold_min() {
+    public double getPhthreshold_min() {
         return phthreshold_min;
     }
 
-    public int getChlorinethreshold_max() {
+    public double getChlorinethreshold_max() {
         return Chlorinethreshold_max;
     }
 
-    public int getChlorinethreshold_min() {
+    public double getChlorinethreshold_min() {
         return Chlorinethreshold_min;
     }
 }
