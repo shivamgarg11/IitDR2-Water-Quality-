@@ -3,6 +3,7 @@ package com.shivam.iitdr2water_quality;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,9 +46,8 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
         holder.Swimmingpoolname.setText(pool.getName());
         holder.SWimmingpooladdress.setText(pool.getAddress());
         holder.phvalue.setText(String.valueOf(pool.getPh()));
-        holder.thresholdph.setText(String.valueOf(pool.getPhthreshold_max()+"-"+pool.getPhthreshold_min()));
+        holder.remarkph.setText(String.valueOf(pool.getPhthreshold_max()+"-"+pool.getPhthreshold_min()));
         holder.clvalue.setText(String.valueOf(pool.getChlorine()));
-        holder.thresholdcl.setText(String.valueOf(pool.getChlorinethreshold_max()+"-"+pool.getChlorinethreshold_min()));
 
         if(pool.getPh()<pool.getPhthreshold_min()||pool.getPh()>pool.getPhthreshold_max()){
             holder.phvalue.setTextColor(Color.RED);
@@ -68,8 +68,8 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
 
 
     static class CourseViewHolder extends RecyclerView.ViewHolder {
-        FrameLayout frameswimmingpool;
-        TextView Swimmingpoolname, SWimmingpooladdress, phvalue,thresholdph,clvalue,thresholdcl;
+        CardView frameswimmingpool;
+        TextView Swimmingpoolname, SWimmingpooladdress, phvalue,remarkph,clvalue,remarkcl;
 
         public CourseViewHolder(View itemView) {
             super(itemView);
@@ -77,9 +77,9 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
             Swimmingpoolname = itemView.findViewById(R.id.Swimmingpoolname);
             SWimmingpooladdress = itemView.findViewById(R.id.SWimmingpooladdress);
             phvalue = itemView.findViewById(R.id.phvalue);
-            thresholdph = itemView.findViewById(R.id.thresholdph);
+            remarkph = itemView.findViewById(R.id.remarkph);
             clvalue = itemView.findViewById(R.id.clvalue);
-            thresholdcl = itemView.findViewById(R.id.thresholdcl);
+            remarkcl = itemView.findViewById(R.id.remarkcl);
         }
     }
 }
