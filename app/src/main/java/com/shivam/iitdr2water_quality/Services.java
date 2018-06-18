@@ -60,27 +60,27 @@ public class Services extends Service {
                     String heading="";
                     for (int i=0;i<pools.size();i++){
                         if(pools.get(i).getPh()<pools.get(i).getPhthreshold_min()||pools.get(i).getPh()>pools.get(i).getPhthreshold_max()||pools.get(i).getChlorine()<pools.get(i).getChlorinethreshold_min()||pools.get(i).getChlorine()>pools.get(i).getChlorinethreshold_max()){
-                           heading+=pools.get(i).getName()+"\n";
+                            heading+=pools.get(i).getName()+"\n";
                         }
 
                     }
                     if(heading.length()>0){
-                    NotificationCompat.Builder builder =
-                            new NotificationCompat.Builder(Services.this)
-                                    .setSmallIcon(R.drawable.ic_launcher_background)
-                                    .setContentTitle("NOT SAFE")
-                                    .setContentText(heading);
+                        NotificationCompat.Builder builder =
+                                new NotificationCompat.Builder(Services.this)
+                                        .setSmallIcon(R.drawable.ic_launcher_background)
+                                        .setContentTitle("NOT SAFE")
+                                        .setContentText(heading);
 
-                    Intent notificationIntent = new Intent(Services.this, MainActivity.class);
-                    PendingIntent contentIntent = PendingIntent.getActivity(Services.this, 0, notificationIntent,
-                            PendingIntent.FLAG_UPDATE_CURRENT);
-                    builder.setContentIntent(contentIntent);
+                        Intent notificationIntent = new Intent(Services.this, MainActivity.class);
+                        PendingIntent contentIntent = PendingIntent.getActivity(Services.this, 0, notificationIntent,
+                                PendingIntent.FLAG_UPDATE_CURRENT);
+                        builder.setContentIntent(contentIntent);
 
-                    // Add as notification
-                    NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                    manager.notify(0, builder.build());
+                        // Add as notification
+                        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                        manager.notify(0, builder.build());
 
-                }
+                    }
                 }
             });
         }
