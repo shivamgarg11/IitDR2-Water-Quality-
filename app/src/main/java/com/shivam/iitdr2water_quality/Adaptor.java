@@ -50,35 +50,30 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
         holder.remarkcl.setText(String.valueOf(pool.getChlorinethreshold_max()+"-"+pool.getChlorinethreshold_min()));
 
         if(pool.getPh()<pool.getPhthreshold_min()||pool.getPh()>pool.getPhthreshold_max()){
-            holder.phvalue.setTextColor(Color.RED);
             holder.frameswimmingpool.setBackgroundColor(Color.RED);
-            holder.imageok.setImageResource(R.drawable.notok);
-
             if(pool.getPh()<pool.getPhthreshold_min()){
-                holder.remarkph.setText("INCREASE");
+                holder.remarkph.setText("Increase");
             }else{
-                holder.remarkph.setText("DECREASE");
+                holder.remarkph.setText("Decrease");
             }
 
         }
         else{
-            holder.remarkph.setText("OK");
+            holder.remarkph.setText("Ok");
         }
 
 
         if(pool.getChlorine()<pool.getChlorinethreshold_min()||pool.getChlorine()>pool.getChlorinethreshold_max()){
-            holder.clvalue.setTextColor(Color.RED);
             holder.frameswimmingpool.setBackgroundColor(Color.RED);
 
-            holder.imageok.setImageResource(R.drawable.notok);
 
             if(pool.getChlorine()<pool.getChlorinethreshold_min()){
-                holder.remarkcl.setText("INCREASE");
+                holder.remarkcl.setText("Increase");
             }else{
-                holder.remarkcl.setText("DECREASE");
+                holder.remarkcl.setText("Decrease");
             }
         }else{
-            holder.remarkcl.setText("OK");
+            holder.remarkcl.setText("Ok");
         }
 
     }
@@ -93,7 +88,6 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
     static class CourseViewHolder extends RecyclerView.ViewHolder {
         FrameLayout frameswimmingpool;
         TextView Swimmingpoolname, SWimmingpooladdress, phvalue,remarkph,clvalue,remarkcl;
-        ImageView imageok;
 
         public CourseViewHolder(View itemView) {
             super(itemView);
@@ -104,7 +98,6 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.CourseViewHolder> {
             remarkph = itemView.findViewById(R.id.remarkph);
             clvalue = itemView.findViewById(R.id.clvalue);
             remarkcl = itemView.findViewById(R.id.remarkcl);
-            imageok=itemView.findViewById(R.id.imagerecycleok);
         }
     }
 }

@@ -10,37 +10,59 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Swimming pool"
+        android:text="IIT Swimming pool"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:gravity="center"
         android:textStyle="bold"/>
+
+    <TextView
+        android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_weight="2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="THRESHOLD VALUES:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:text="Threshold Values:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginRight="5dp"
+            android:background="#000"
+            android:layout_width="2dp"
+            android:layout_height="match_parent" />
 
 
     <TextView
         android:textStyle="bold"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ph : 5-7"/>
+        android:text="ph : 6-8"/>
+
+        <TextView
+            android:layout_marginRight="5dp"
+            android:background="#000"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
 
         <TextView
             android:textStyle="bold"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chlorine : 50-70"/>
+            android:text="Chlorine : 1-3 ppm"/>
+
+        <TextView
+            android:background="#000"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
